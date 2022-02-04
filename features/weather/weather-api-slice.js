@@ -6,7 +6,7 @@ const API_KEY = "f043da3d7e17dec5f8f361091ebc0f59";
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://api.openweathermap.org/data/2.5",
+    baseUrl: "https://api.openweathermap.org/data/2.5",
   }),
   keepUnusedDataFor: 100,
   endpoints(builder) {
