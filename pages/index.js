@@ -16,7 +16,7 @@ export default function Home() {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const { data, error, isFetching } = useFetchDataQuery({
     city: cities.find((i) => i.active),
-    ts: date.getTime(),
+    ts: moment(date).unix(),
   });
 
   const handleTabChange = (activeCity) => {
@@ -38,7 +38,7 @@ export default function Home() {
     <div className="p-8">
       {isOpenModal && (
         <Modal
-          text={error.data?.message || error.message || "Error"}
+          text={error.data?.message || "Error"}
           onClose={() => setIsOpenModal(false)}
         />
       )}
