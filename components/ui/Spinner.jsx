@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 export default function Spinner({ size }) {
   return (
-    <div
-      className={`w-${size} h-${size} border-l-2 border-gray-900 rounded-full animate-spin`}
-    />
+    <div>
+      <Image src="/tail-spin.svg" alt="Loading..." width={size} height={size} />
+    </div>
   );
 }

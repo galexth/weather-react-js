@@ -45,7 +45,7 @@ export default function Home() {
       <h1 className="text-3xl font-bold">Weather</h1>
       <Tabs cities={cities} onChange={handleTabChange} />
       <div className="flex flex-nowrap flex-row justify-between p-8">
-        {isFetching ? <Spinner size={16} /> : <Weather day={data} />}
+        {isFetching ? <Spinner size={60} /> : <Weather day={data} />}
         <div>
           <Calendar
             calendarType="ISO 8601"
