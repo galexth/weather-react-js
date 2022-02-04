@@ -28,6 +28,10 @@ export default function Home() {
     );
   };
 
+  const handleDayChange = (value) => {
+    setDate(value);
+  };
+
   useEffect(() => {
     if (error) {
       setIsOpenModal(true);
@@ -35,7 +39,7 @@ export default function Home() {
   }, [error]);
 
   return (
-    <div className="p-8">
+    <div className="p-4 md:p-8 min-w-min">
       {isOpenModal && (
         <Modal
           text={error.data?.message || "Error"}
@@ -44,15 +48,16 @@ export default function Home() {
       )}
       <h1 className="text-3xl font-bold">Weather</h1>
       <Tabs cities={cities} onChange={handleTabChange} />
-      <div className="flex flex-nowrap flex-row justify-between p-8">
-        {isFetching ? <Spinner size={60} /> : <Weather day={data} />}
-        <div>
+      <div className="flex flex-nowrap flex-col md:flex-row justify-between p-4 md:p-8">
+        <div className="h-28">
+          {isFetching ? <Spinner size={60} /> : <Weather day={data} />}
+        </div>
+        <div className="drop-shadow-xl">
           <Calendar
+            className={"!border-slate-200"}
             calendarType="ISO 8601"
             value={date}
-            onChange={(value) => {
-              setDate(value);
-            }}
+            onChange={handleDayChange}
             locale={"en-US"}
           />
         </div>
