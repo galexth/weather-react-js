@@ -39,7 +39,7 @@ export default function Home() {
   }, [error]);
 
   return (
-    <div className="p-4 md:p-8 min-w-[450px] max-w-screen-lg">
+    <div className="p-4 md:p-8 max-w-screen-lg">
       {isOpenModal && (
         <Modal
           text={error.data?.message || "Error"}
