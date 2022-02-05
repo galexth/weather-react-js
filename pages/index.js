@@ -39,16 +39,16 @@ export default function Home() {
   }, [error]);
 
   return (
-    <div className="p-4 md:p-8 min-w-min">
+    <div className="p-4 md:p-8 min-w-[450px] max-w-screen-lg">
       {isOpenModal && (
         <Modal
           text={error.data?.message || "Error"}
           onClose={() => setIsOpenModal(false)}
         />
       )}
-      <h1 className="text-3xl font-bold">Weather</h1>
+      <h1 className="text-3xl font-bold">Weather App</h1>
       <Tabs cities={cities} onChange={handleTabChange} />
-      <div className="flex flex-nowrap flex-col md:flex-row justify-between p-4 md:p-8">
+      <div className="flex flex-nowrap flex-col md:flex-row justify-between items-center md:items-start p-4 md:p-8">
         <div className="h-28">
           {isFetching ? <Spinner size={60} /> : <Weather day={data} />}
         </div>

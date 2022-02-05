@@ -1,7 +1,7 @@
 export default function Modal({ text, onClose }) {
   return (
-    <div className="bg-slate-800 bg-opacity-50 flex justify-center items-center absolute top-0 right-0 bottom-0 left-0">
-      <div className="bg-white px-16 py-6 rounded-md text-center">
+    <div className="z-10 bg-slate-800 bg-opacity-50 flex justify-center items-center absolute top-0 right-0 bottom-0 left-0">
+      <div className="bg-white px-8 md:px-16 py-6 rounded-md text-center">
         <h1 className="text-xl mb-4 font-bold text-slate-500">
           Something went wrong
         </h1>
